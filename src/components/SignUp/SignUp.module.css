@@ -1,0 +1,33 @@
+.signup-container button {
+  margin: 1em 0;
+}
+
+.line-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.line {
+  width: 45%;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 3px solid lightgray;
+  position: absolute;
+  bottom: 36%;
+}
+
+.line-one {
+  left: 0;
+}
+
+.line-two {
+  right: 0;
+}
+
+.line-container p {
+  font-weight: bold;
+  color: grey;
+}

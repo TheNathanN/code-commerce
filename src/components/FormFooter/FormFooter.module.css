@@ -1,0 +1,32 @@
+.form-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-footer a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+.cancel-btn {
+  margin: 2em 0;
+  font-weight: bold;
+}
+
+.cancel-btn a,
+.policy-container a {
+  color: grey;
+}
+
+.cancel-btn a:hover,
+.policy-container a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.policy-container,
+.policy-container a {
+  font-size: 0.9em;
+}

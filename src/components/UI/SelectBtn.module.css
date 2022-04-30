@@ -1,0 +1,25 @@
+.select-container {
+  align-items: center;
+}
+
+.select-btn {
+  border-radius: 50%;
+  border: 3px solid var(--gray);
+  background-color: transparent;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0.5em;
+}
+
+.select-container p {
+  font-weight: bold;
+}
+
+.select-btn,
+.select-container p {
+  cursor: pointer;
+}
+
+.selected {
+  background-color: var(--red);
+}

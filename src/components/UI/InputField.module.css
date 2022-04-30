@@ -1,0 +1,54 @@
+.input-container {
+  position: relative;
+}
+
+.input-container label {
+  display: block;
+  font-size: 1.2em;
+  color: var(--black);
+  font-weight: bold;
+  margin: 1em 0;
+  font-size: 0.9em;
+}
+
+.basic-input {
+  width: 100%;
+  padding: 0.6em;
+  margin-bottom: 0.5em;
+  border: 3px solid lightgray;
+  background-color: transparent;
+  font-size: 1em;
+}
+
+.basic-input:focus {
+  outline: 0;
+}
+
+.input-error {
+  background-color: rgba(255, 0, 0, 0.226);
+  border: 3px solid red;
+}
+
+.eye-icon {
+  position: absolute;
+  width: 1em;
+  right: 10px;
+  top: 62px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.error-msg {
+  color: red;
+  font-weight: bold;
+  font-size: 0.8em;
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+.instructions {
+  font-size: 0.75em;
+  font-weight: bold;
+  color: grey;
+}
