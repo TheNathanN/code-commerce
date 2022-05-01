@@ -54,7 +54,12 @@ button {
   cursor: pointer;
 }
 
-.red-btn {
+button:disabled {
+  cursor: default;
+}
+
+.red-btn,
+button:disabled:hover {
   background-color: var(--red);
 }
 

@@ -26,6 +26,7 @@ class InputField extends Component {
       required,
       error,
       instructions,
+      taken,
     } = this.props;
 
     const { hidden } = this.state;
@@ -43,7 +44,7 @@ class InputField extends Component {
           name={name}
           required={required}
           className={
-            error
+            error || taken
               ? `${styles['basic-input']} ${styles['input-error']}`
               : styles['basic-input']
           }
@@ -57,7 +58,13 @@ class InputField extends Component {
 
         {error && (
           <p className={styles['error-msg']}>
-            {formattedPlaceholder} was entered incorrectly
+            {formattedPlaceholder} was entered incorrectly.
+          </p>
+        )}
+
+        {taken && (
+          <p className={styles['error-msg']}>
+            {formattedPlaceholder} has already been used.
           </p>
         )}
 

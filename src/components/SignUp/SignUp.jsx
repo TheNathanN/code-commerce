@@ -10,6 +10,7 @@ import {
   passwordErrorChecker,
   confirmPasswordErrorChecker,
   nameErrorChecker,
+  emailUsedChecker,
 } from '../../helpers/errorHandlers';
 
 export class SignUp extends Component {
@@ -37,6 +38,7 @@ export class SignUp extends Component {
         value: email,
         required: true,
         error: emailErrorChecker(email),
+        taken: emailUsedChecker(email, accounts),
       },
       password: {
         id: 2,
@@ -96,6 +98,13 @@ export class SignUp extends Component {
       postCode,
     };
 
+    const errors = Object.keys(signUpTemplate).find(
+      input =>
+        signUpTemplate[input].error ||
+        signUpTemplate[input].taken ||
+        signUpTemplate[input].value === ''
+    );
+
     return (
       <div className={`card container ${styles['signup-container']}`}>
         <LoginHeader toggleState={toggleState} createAccount={createAccount} />
@@ -110,6 +119,7 @@ export class SignUp extends Component {
             required,
             error,
             instructions,
+            taken,
           } = signUpTemplate[info];
 
           return (
@@ -123,6 +133,7 @@ export class SignUp extends Component {
               required={required}
               error={error}
               instructions={instructions}
+              taken={taken}
             />
           );
         })}
@@ -130,7 +141,8 @@ export class SignUp extends Component {
         <button
           className='red-btn'
           type='button'
-          onClick={() => createNewAccount(newAccountInfo)}
+          onClick={() => createNewAccount(newAccountInfo, errors)}
+          disabled={errors}
         >
           SAVE
         </button>

@@ -5,6 +5,9 @@ export const emailErrorChecker = input => {
   );
 };
 
+export const emailUsedChecker = (input, allAccounts) =>
+  allAccounts.find(account => account.email === input);
+
 export const passwordErrorChecker = input => {
   const hasLowerCase = str => /[a-z]/.test(str);
   const hasUpperCase = str => /[A-Z]/.test(str);
