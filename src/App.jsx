@@ -3,6 +3,7 @@ import styles from './App.module.css';
 
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import Cart from './components/Cart/Cart';
 
 class App extends Component {
   constructor() {
@@ -33,15 +34,10 @@ class App extends Component {
     });
   };
 
-  createNewAccount = account => {
-    const { email, password, confirmPassword, accounts } = this.state;
+  createNewAccount = (account, err) => {
+    const { accounts } = this.state;
 
-    if (
-      email.length > 1 &&
-      password.length > 1 &&
-      password &&
-      password === confirmPassword
-    ) {
+    if (!err) {
       this.setState({
         email: '',
         password: '',
@@ -115,7 +111,7 @@ class App extends Component {
             createNewAccount={this.createNewAccount}
           />
         ) : (
-          ''
+          <Cart />
         )}
       </div>
     );
