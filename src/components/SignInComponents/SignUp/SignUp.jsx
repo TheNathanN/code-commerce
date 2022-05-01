@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './SignUp.module.css';
 
-import InputField from '../UI/InputField';
+import InputField from '../../UI/InputField';
 import LoginHeader from '../LoginHeader/LoginHeader';
 import FormFooter from '../FormFooter/FormFooter';
 
@@ -11,7 +11,7 @@ import {
   confirmPasswordErrorChecker,
   nameErrorChecker,
   emailUsedChecker,
-} from '../../helpers/errorHandlers';
+} from '../../../helpers/errorHandlers';
 
 export class SignUp extends Component {
   render() {

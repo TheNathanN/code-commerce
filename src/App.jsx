@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styles from './App.module.css';
 
-import Login from './components/Login/Login';
-import SignUp from './components/SignUp/SignUp';
-import Cart from './components/Cart/Cart';
+import Login from './components/SignInComponents/Login/Login';
+import SignUp from './components/SignInComponents/SignUp/SignUp';
+import Cart from './components/CartComponents/Cart/Cart';
 
 class App extends Component {
   constructor() {

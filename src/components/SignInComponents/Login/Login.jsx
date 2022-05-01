@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Login.module.css';
 
-import InputField from '../UI/InputField';
+import InputField from '../../UI/InputField';
 import LoginHeader from '../LoginHeader/LoginHeader';
 import FormFooter from '../FormFooter/FormFooter';
 

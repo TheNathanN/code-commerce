@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './LoginHeader.module.css';
 
-import SelectBtn from '../UI/SelectBtn';
+import SelectBtn from '../../UI/SelectBtn';
 
 export class LoginHeader extends Component {
   render() {
