@@ -7,7 +7,7 @@ export class SelectBtn extends Component {
 
     return (
       <div
-        className={`container ${styles['select-container']}`}
+        className={`${styles['select-container']}`}
         onClick={() => toggleState('createAccount')}
       >
         <div

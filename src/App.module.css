@@ -1,3 +1,18 @@
-.app-container {
+.signin-container,
+.cart-container {
+  width: 100%;
+}
+
+.signin-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: scroll;
   padding: 2em;
+}
+
+.cart-container {
+  padding: 0.5em;
 }

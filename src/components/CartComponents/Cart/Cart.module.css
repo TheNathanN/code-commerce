@@ -1,0 +1,22 @@
+.cart-table,
+.cart-header,
+.cart-body {
+  width: 100%;
+}
+
+.cart-container {
+  display: flex;
+}
+
+.cart-table {
+  background-color: var(--white);
+  padding: 0.5em;
+}
+
+.cart-header {
+  border-bottom: 3px solid var(--bg-gray);
+  display: flex;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.5em 4em 1em;
+}

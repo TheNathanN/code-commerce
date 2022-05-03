@@ -1,3 +1,7 @@
+.login-container {
+  display: flex;
+}
+
 .login-container button {
   margin: 1em 0;
 }

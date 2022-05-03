@@ -36,7 +36,7 @@ class Login extends Component {
     };
 
     return (
-      <div className={`card container ${styles['login-container']}`}>
+      <div className={`card ${styles['login-container']}`}>
         <LoginHeader toggleState={toggleState} createAccount={createAccount} />
 
         {Object.keys(loginTemplate).map(login => {

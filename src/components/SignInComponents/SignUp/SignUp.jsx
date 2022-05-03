@@ -102,11 +102,11 @@ export class SignUp extends Component {
       input =>
         signUpTemplate[input].error ||
         signUpTemplate[input].taken ||
-        signUpTemplate[input].value === ''
+        (signUpTemplate[input].value === '' && input !== 'postCode')
     );
 
     return (
-      <div className={`card container ${styles['signup-container']}`}>
+      <div className={`card ${styles['signup-container']}`}>
         <LoginHeader toggleState={toggleState} createAccount={createAccount} />
 
         {Object.keys(signUpTemplate).map(info => {

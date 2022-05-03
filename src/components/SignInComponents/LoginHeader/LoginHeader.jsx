@@ -8,7 +8,7 @@ export class LoginHeader extends Component {
     const { toggleState, createAccount } = this.props;
 
     return (
-      <div className={`container ${styles['header-container']}`}>
+      <div className={`${styles['header-container']}`}>
         <div>
           <SelectBtn
             toggleState={toggleState}

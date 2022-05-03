@@ -3,12 +3,11 @@ import styles from './App.module.css';
 
 import Login from './components/SignInComponents/Login/Login';
 import SignUp from './components/SignInComponents/SignUp/SignUp';
-import Cart from './components/CartComponents/Cart/Cart';
+import LoggedIn from './components/LoggedIn/LoggedIn';
 
 class App extends Component {
   constructor() {
     super();
-
     this.state = {
       password: '',
       confirmPassword: '',
@@ -16,7 +15,7 @@ class App extends Component {
       lastName: '',
       email: '',
       postCode: '',
-      signedIn: false,
+      signedIn: true,
       createAccount: false,
       accounts: [],
     };
@@ -64,12 +63,10 @@ class App extends Component {
         email: userInfo.email,
         signedIn: true,
       });
-      alert('You have succesfully logged in.');
+      alert('You have successfully logged in.');
     } else {
       alert('Email or Password has been entered incorrectly.');
     }
-
-    console.log(userInfo); // Delete this conosole log
   };
 
   render() {
@@ -86,34 +83,40 @@ class App extends Component {
     } = this.state;
 
     return (
-      <div className={`container ${styles['app-container']}`}>
+      <>
         {!signedIn && !createAccount ? (
-          <Login
-            email={email}
-            password={password}
-            createAccount={createAccount}
-            inputChangeHandler={this.inputChangeHandler}
-            toggleState={this.toggleState}
-            loginUser={this.loginUser}
-          />
+          <div className={`${styles['signin-container']}`}>
+            <Login
+              email={email}
+              password={password}
+              createAccount={createAccount}
+              inputChangeHandler={this.inputChangeHandler}
+              toggleState={this.toggleState}
+              loginUser={this.loginUser}
+            />
+          </div>
         ) : !signedIn ? (
-          <SignUp
-            password={password}
-            firstName={firstName}
-            lastName={lastName}
-            email={email}
-            postCode={postCode}
-            confirmPassword={confirmPassword}
-            accounts={accounts}
-            createAccount={createAccount}
-            inputChangeHandler={this.inputChangeHandler}
-            toggleState={this.toggleState}
-            createNewAccount={this.createNewAccount}
-          />
+          <div className={`${styles['signin-container']}`}>
+            <SignUp
+              password={password}
+              firstName={firstName}
+              lastName={lastName}
+              email={email}
+              postCode={postCode}
+              confirmPassword={confirmPassword}
+              accounts={accounts}
+              createAccount={createAccount}
+              inputChangeHandler={this.inputChangeHandler}
+              toggleState={this.toggleState}
+              createNewAccount={this.createNewAccount}
+            />
+          </div>
         ) : (
-          <Cart />
+          <>
+            <LoggedIn />
+          </>
         )}
-      </div>
+      </>
     );
   }
 }
