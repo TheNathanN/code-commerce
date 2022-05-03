@@ -15,7 +15,7 @@ class App extends Component {
       lastName: '',
       email: '',
       postCode: '',
-      signedIn: true,
+      signedIn: false,
       createAccount: false,
       accounts: [],
     };

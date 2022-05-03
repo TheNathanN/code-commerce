@@ -4,9 +4,11 @@ import styles from './Cart.module.css';
 
 export class Cart extends Component {
   render() {
+    const { itemsInCart, changeQuantity, removeItem } = this.props;
+
     return (
       <div className={`${styles['cart-container']}`}>
-        <main className={`${styles['cart-table']}`}>
+        <div className={`${styles['cart-table']}`}>
           <div className={`${styles['cart-header']}`}>
             <div className='cart-col-1'>PRODUCT</div>
             <div className='cart-col-2'>PRICE</div>
@@ -15,18 +17,30 @@ export class Cart extends Component {
           </div>
 
           <div className={`${styles['cart-body']}`}>
-            <ProductRow
-              img='https://images.unsplash.com/photo-1651489330304-6b7521930deb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'
-              productName='Winter Coat'
-              gender='Women'
-              color='Brown'
-              size='Medium'
-              price='50.00'
-              quantity={2}
-              totalPrice='100.00'
-            />
+            <main className={`${styles['products-container']}`}>
+              {Object.keys(itemsInCart).map(product => (
+                <ProductRow
+                  key={itemsInCart[product].id}
+                  id={itemsInCart[product].id}
+                  img={itemsInCart[product].img}
+                  productName={itemsInCart[product].name}
+                  gender={itemsInCart[product].gender}
+                  color={itemsInCart[product].color}
+                  size={itemsInCart[product].size}
+                  price={itemsInCart[product].price}
+                  quantity={itemsInCart[product].quantity}
+                  totalPrice={
+                    itemsInCart[product].price * itemsInCart[product].quantity
+                  }
+                  changeQuantity={changeQuantity}
+                  removeItem={removeItem}
+                />
+              ))}
+            </main>
+
+            <div></div>
           </div>
-        </main>
+        </div>
       </div>
     );
   }

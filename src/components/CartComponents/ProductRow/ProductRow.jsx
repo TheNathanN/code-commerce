@@ -4,6 +4,7 @@ import styles from './ProductRow.module.css';
 export class ProductRow extends Component {
   render() {
     const {
+      id,
       img,
       productName,
       gender,
@@ -12,11 +13,16 @@ export class ProductRow extends Component {
       price,
       quantity,
       totalPrice,
+      changeQuantity,
+      removeItem,
     } = this.props;
 
     return (
       <div className={`${styles['product-info-container']}`}>
-        <i className={`fa-solid fa-circle-xmark ${styles['close-icon']}`}></i>
+        <i
+          className={`fa-solid fa-circle-xmark ${styles['close-icon']}`}
+          onClick={() => removeItem(id)}
+        ></i>
         <div className={`cart-col-1 ${styles['product-info']}`}>
           <img
             src={img}
@@ -46,6 +52,7 @@ export class ProductRow extends Component {
             type='number'
             name='quantity'
             value={quantity}
+            onChange={e => changeQuantity(id, e)}
             className={`${styles['qty-input']}`}
           />
         </div>

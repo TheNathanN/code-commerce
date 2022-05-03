@@ -1,6 +1,8 @@
+.cart-container,
 .cart-table,
 .cart-header,
-.cart-body {
+.cart-body,
+.products-container {
   width: 100%;
 }
 

@@ -10,8 +10,15 @@
 }
 
 .product-info-container {
-  padding: 0 4em;
+  margin: 2em 0;
+  padding: 0 4em 2em;
   position: relative;
+  border-bottom: 3px solid var(--bg-gray);
+}
+
+.product-info-container:last-child {
+  border: 0;
+  margin-bottom: 0px;
 }
 
 .close-icon {
@@ -27,7 +34,7 @@
 }
 
 .product-img {
-  width: 9em;
+  width: 10em;
   margin-right: 1.5em;
 }
 
