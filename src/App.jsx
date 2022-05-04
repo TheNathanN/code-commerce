@@ -3,7 +3,7 @@ import styles from './App.module.css';
 
 import Login from './components/SignInComponents/Login/Login';
 import SignUp from './components/SignInComponents/SignUp/SignUp';
-import LoggedIn from './components/LoggedIn/LoggedIn';
+import LoggedIn from './components/LoggedInComponents/LoggedIn/LoggedIn';
 
 class App extends Component {
   constructor() {
@@ -17,7 +17,14 @@ class App extends Component {
       postCode: '',
       signedIn: false,
       createAccount: false,
-      accounts: [],
+      accounts: [
+        {
+          email: 'test@test.com',
+          password: '12345Abc#',
+          firstName: 'Test',
+          lastName: 'Tester',
+        },
+      ],
     };
   }
 

@@ -1,0 +1,15 @@
+.summary-container {
+  width: 30em;
+  background-color: var(--white);
+  margin-left: 1.5em;
+  padding: 1em;
+}
+
+.summary-container header {
+  text-align: right;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 3px solid var(--bg-gray);
+  font-weight: bold;
+  font-size: var(--font-md);
+}

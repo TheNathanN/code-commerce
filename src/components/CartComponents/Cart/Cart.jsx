@@ -37,8 +37,6 @@ export class Cart extends Component {
                 />
               ))}
             </main>
-
-            <div></div>
           </div>
         </div>
       </div>

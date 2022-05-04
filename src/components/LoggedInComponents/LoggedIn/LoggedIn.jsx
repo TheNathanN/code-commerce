@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import styles from './LoggedIn.module.css';
 
-import Cart from '../CartComponents/Cart/Cart';
+import Cart from '../../CartComponents/Cart/Cart';
+import Summary from '../Summary/Summary';
 
 export class LoggedIn extends Component {
   constructor() {
     super();
     this.state = {
+      view: 'cart', // 'cart' || 'ship' || 'pay' || 'confirm'
+      shipping: 0,
+      discount: 0,
+      discountCodes: [{ discountCode: 15 }, { anotherCode: 25 }],
       itemsInCart: {
         1: {
           id: 1,
@@ -65,13 +70,55 @@ export class LoggedIn extends Component {
     });
   };
 
+  changeView = desiredView => {
+    this.setState({
+      view: desiredView,
+    });
+  };
+
+  verifyDiscount = codeEntered => {
+    const { discountCodes } = this.state;
+    let newDiscount = 0;
+
+    const discountFound = discountCodes.find(
+      code => Object.keys(code)[0] === codeEntered
+    );
+
+    if (discountFound) {
+      const discount = Object.values(discountFound)[0];
+
+      newDiscount = discount;
+
+      alert(`Your discount saved you $${discount}.00`);
+    } else {
+      alert('Code entered is invalid');
+    }
+
+    this.setState({
+      discount: newDiscount,
+    });
+  };
+
   render() {
+    const { itemsInCart, view, shipping, discount } = this.state;
+
     return (
-      <div className={`${styles['cart-container']}`}>
-        <Cart
-          itemsInCart={this.state.itemsInCart}
-          changeQuantity={this.changeQuantity}
-          removeItem={this.removeItem}
+      <div className={`${styles['container']}`}>
+        {view === 'cart' ? (
+          <Cart
+            itemsInCart={itemsInCart}
+            changeQuantity={this.changeQuantity}
+            removeItem={this.removeItem}
+          />
+        ) : (
+          ''
+        )}
+        <Summary
+          itemsInCart={itemsInCart}
+          view={view}
+          shipping={shipping}
+          discount={discount}
+          verifyDiscount={this.verifyDiscount}
         />
       </div>
     );

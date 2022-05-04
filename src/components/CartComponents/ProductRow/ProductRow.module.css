@@ -24,7 +24,7 @@
 .close-icon {
   position: absolute;
   left: 1.2%;
-  font-size: 1.4em;
+  font-size: var(--font-lg);
   color: var(--gray);
   cursor: pointer;
 }
@@ -50,9 +50,13 @@
   font-weight: bold;
 }
 
+.product-price-container {
+  font-size: var(--font-md);
+}
+
 .gender,
 .product-metadata {
-  font-size: 0.9em;
+  font-size: var(--font-sm);
 }
 
 .gender {
@@ -60,7 +64,7 @@
 }
 
 .name {
-  font-size: 1.3em;
+  font-size: var(--font-md);
   margin: 0.5em 0;
 }
 
@@ -75,6 +79,6 @@
 
 .product-qty-container input {
   width: 5em;
-  padding: 0.8em;
-  font-size: 1em;
+  padding: 0.5em;
+  font-size: var(--font-rg);
 }

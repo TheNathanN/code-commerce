@@ -23,6 +23,7 @@ export class ProductRow extends Component {
           className={`fa-solid fa-circle-xmark ${styles['close-icon']}`}
           onClick={() => removeItem(id)}
         ></i>
+
         <div className={`cart-col-1 ${styles['product-info']}`}>
           <img
             src={img}

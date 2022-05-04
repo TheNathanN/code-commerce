@@ -1,0 +1,38 @@
+.promo-container {
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1em 0;
+  padding-bottom: 1em;
+  border-bottom: 3px solid var(--bg-gray);
+}
+
+.promo-input {
+  width: 65%;
+  border: 3px solid var(--black);
+  padding: 0.5em;
+}
+
+.promo-btn {
+  background-color: transparent;
+  color: var(--black);
+  border: 3px solid var(--black);
+  border-radius: 2px;
+  font-size: var(--font-rg);
+  padding: 0.5em 1em;
+  cursor: pointer;
+}
+
+.promo-btn:disabled:hover {
+  color: var(--black);
+  background-color: transparent;
+  cursor: default;
+}
+
+.promo-btn:hover {
+  background-color: var(--black);
+  color: var(--white);
+}
