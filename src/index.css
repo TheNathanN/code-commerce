@@ -1,10 +1,11 @@
-/* ALL GENERAL STYLES ARE HERE */
+/* ALL GENERAL STYLES ARE IN THIS FILE */
 
 :root {
   --white: #fff;
   --black: #000;
   --red: #e68d8a;
   --dark-red: #eb6c68;
+  --light-green: rgb(128, 231, 183);
   --gray: gray;
   --bg-gray: #f5f5f5;
   --font-sm: 0.9em;

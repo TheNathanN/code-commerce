@@ -1,0 +1,22 @@
+.total-container {
+  border-bottom: 3px solid var(--bg-gray);
+  padding-bottom: 1em;
+}
+
+.total-data {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5em 0;
+}
+
+.total-col-2 {
+  font-weight: bold;
+}
+
+.total-data:last-child .total-col-1 {
+  font-weight: bold;
+}
+
+.total-data:last-child .total-col-2 {
+  color: var(--red);
+}
