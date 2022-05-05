@@ -113,6 +113,7 @@ export class LoggedIn extends Component {
         ) : (
           ''
         )}
+
         <Summary
           itemsInCart={itemsInCart}
           view={view}
