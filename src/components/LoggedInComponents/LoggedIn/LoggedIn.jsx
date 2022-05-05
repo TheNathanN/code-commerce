@@ -3,6 +3,7 @@ import styles from './LoggedIn.module.css';
 
 import Cart from '../../CartComponents/Cart/Cart';
 import Summary from '../Summary/Summary';
+import ProgressBar from '../ProgressBar/ProgressBar';
 
 export class LoggedIn extends Component {
   constructor() {
@@ -103,16 +104,19 @@ export class LoggedIn extends Component {
     const { itemsInCart, view, shipping, discount } = this.state;
 
     return (
-      <div className={`${styles['container']}`}>
-        {view === 'cart' ? (
-          <Cart
-            itemsInCart={itemsInCart}
-            changeQuantity={this.changeQuantity}
-            removeItem={this.removeItem}
-          />
-        ) : (
-          ''
-        )}
+      <div className={`${styles['loggedIn-container']}`}>
+        <div className={`${styles['main-container']}`}>
+          <ProgressBar view={view} />
+          {view === 'cart' ? (
+            <Cart
+              itemsInCart={itemsInCart}
+              changeQuantity={this.changeQuantity}
+              removeItem={this.removeItem}
+            />
+          ) : (
+            ''
+          )}
+        </div>
 
         <Summary
           itemsInCart={itemsInCart}

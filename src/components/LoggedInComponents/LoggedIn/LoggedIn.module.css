@@ -1,5 +1,9 @@
-.container {
+.loggedIn-container {
   width: 100%;
   padding: 1em;
   display: flex;
+}
+
+.main-container {
+  width: 100%;
 }
