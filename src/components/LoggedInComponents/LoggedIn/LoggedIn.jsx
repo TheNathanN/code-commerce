@@ -71,10 +71,21 @@ export class LoggedIn extends Component {
     });
   };
 
-  changeView = desiredView => {
-    this.setState({
-      view: desiredView,
-    });
+  changeView = (direction, view) => {
+    const views = ['cart', 'ship', 'pay', 'confirm'];
+    const currentIndex = views.indexOf(view);
+
+    if (direction === 'next' && currentIndex + 1 <= views.length) {
+      this.setState({
+        view: views[currentIndex + 1],
+      });
+    } else if (direction === 'prev' && currentIndex >= 0) {
+      this.setState({
+        view: views[currentIndex - 1],
+      });
+    } else {
+      alert('There is an error in the changeView function.');
+    }
   };
 
   verifyDiscount = codeEntered => {
@@ -107,14 +118,12 @@ export class LoggedIn extends Component {
       <div className={`${styles['loggedIn-container']}`}>
         <div className={`${styles['main-container']}`}>
           <ProgressBar view={view} />
-          {view === 'cart' ? (
+          {view === 'cart' && (
             <Cart
               itemsInCart={itemsInCart}
               changeQuantity={this.changeQuantity}
               removeItem={this.removeItem}
             />
-          ) : (
-            ''
           )}
         </div>
 
@@ -124,6 +133,7 @@ export class LoggedIn extends Component {
           shipping={shipping}
           discount={discount}
           verifyDiscount={this.verifyDiscount}
+          changeView={this.changeView}
         />
       </div>
     );

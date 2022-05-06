@@ -13,3 +13,13 @@
   font-weight: bold;
   font-size: var(--font-md);
 }
+
+.summary-container button {
+  width: 100%;
+  margin: 1em 0;
+  background-color: var(--red);
+}
+
+.summary-container button:hover {
+  background-color: var(--dark-red);
+}
