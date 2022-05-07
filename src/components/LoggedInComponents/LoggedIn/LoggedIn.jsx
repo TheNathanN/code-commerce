@@ -4,6 +4,7 @@ import styles from './LoggedIn.module.css';
 import Cart from '../../CartComponents/Cart/Cart';
 import Summary from '../Summary/Summary';
 import ProgressBar from '../ProgressBar/ProgressBar';
+import Shipping from '../../ShippingComponents/Shipping/Shipping';
 
 export class LoggedIn extends Component {
   constructor() {
@@ -118,6 +119,7 @@ export class LoggedIn extends Component {
       <div className={`${styles['loggedIn-container']}`}>
         <div className={`${styles['main-container']}`}>
           <ProgressBar view={view} />
+
           {view === 'cart' && (
             <Cart
               itemsInCart={itemsInCart}
@@ -125,6 +127,8 @@ export class LoggedIn extends Component {
               removeItem={this.removeItem}
             />
           )}
+
+          {view === 'ship' && <Shipping view={view} />}
         </div>
 
         <Summary

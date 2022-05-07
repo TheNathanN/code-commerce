@@ -5,7 +5,7 @@
   padding: 1em;
 }
 
-.summary-container header {
+.summary-header {
   text-align: right;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -14,12 +14,12 @@
   font-size: var(--font-md);
 }
 
-.summary-container button {
+.summary-btn {
   width: 100%;
   margin: 1em 0;
   background-color: var(--red);
 }
 
-.summary-container button:hover {
+.summary-btn:hover {
   background-color: var(--dark-red);
 }

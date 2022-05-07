@@ -1,0 +1,19 @@
+.cart-summary-header {
+  font-size: 1em;
+  font-weight: normal;
+  border-bottom: 3px solid var(--bg-gray);
+  text-align: right;
+  padding-bottom: 1em;
+}
+
+.cart-summary-container span {
+  font-weight: bold;
+}
+
+.product-card-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-bottom: 3px solid var(--bg-gray);
+  padding: 1em 0;
+}

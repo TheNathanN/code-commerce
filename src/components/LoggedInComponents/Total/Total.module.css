@@ -1,6 +1,6 @@
 .total-container {
   border-bottom: 3px solid var(--bg-gray);
-  padding-bottom: 1em;
+  padding: 0.5em 0;
 }
 
 .total-data {

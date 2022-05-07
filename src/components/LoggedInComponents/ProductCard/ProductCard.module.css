@@ -1,0 +1,38 @@
+.card-container {
+  display: flex;
+  margin: 0.5em 0.5em 0.5em 0;
+}
+
+.product-img {
+  width: 5.5em;
+}
+
+.labels-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0.5em;
+  width: 100%;
+}
+
+.labels-header {
+  font-weight: bold;
+}
+
+.label-container {
+  display: flex;
+}
+
+.label {
+  width: 3.3em;
+}
+
+.labels-container-child {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.price {
+  font-weight: bold;
+}
