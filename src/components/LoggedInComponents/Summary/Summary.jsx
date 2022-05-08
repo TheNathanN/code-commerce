@@ -31,12 +31,18 @@ export class Summary extends Component {
           shipping={shipping}
         />
 
-        <button
-          className={`${styles['summary-btn']}`}
-          onClick={() => changeView('next', view)}
-        >
-          {view === 'cart' ? 'Shipping' : 'Checkout'}
-        </button>
+        {view !== 'confirm' && (
+          <button
+            className={`${styles['summary-btn']}`}
+            onClick={() => changeView('next', view)}
+          >
+            {view === 'cart'
+              ? 'Shipping'
+              : view === 'ship'
+              ? 'Payment'
+              : 'Checkout'}
+          </button>
+        )}
       </div>
     );
   }
