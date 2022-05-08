@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import styles from './Shipping.module.css';
 
 import { countryOptions } from '../../../helpers/inputOptions';
+import BasicInputs from '../BasicInputs/BasicInputs';
+import ShippingInputs from '../ShippingInputs/ShippingInputs';
+import PhoneInputs from '../PhoneInputs/PhoneInputs';
 
 export class Shipping extends Component {
   constructor() {
@@ -10,12 +13,12 @@ export class Shipping extends Component {
       addressTitle: '',
       name: '',
       address: '',
-      zipCode: 0,
+      zipCode: '',
       country: '',
       city: '',
       state: '',
-      cellPhone: 0,
-      telephone: 0,
+      cellPhone: '',
+      telephone: '',
     };
   }
 
@@ -46,6 +49,7 @@ export class Shipping extends Component {
         type: 'text',
         value: addressTitle,
         required: true,
+        changeHandler: this.changeHandler,
       },
       {
         id: 1,
@@ -54,6 +58,7 @@ export class Shipping extends Component {
         type: 'text',
         value: name,
         required: true,
+        changeHandler: this.changeHandler,
       },
     ];
 
@@ -65,6 +70,7 @@ export class Shipping extends Component {
         type: 'text',
         value: address,
         required: true,
+        changeHandler: this.changeHandler,
       },
       {
         id: 3,
@@ -73,6 +79,7 @@ export class Shipping extends Component {
         type: 'number',
         value: zipCode,
         required: true,
+        changeHandler: this.changeHandler,
       },
       {
         id: 4,
@@ -82,6 +89,7 @@ export class Shipping extends Component {
         value: country,
         required: true,
         options: countryOptions,
+        changeHandler: this.changeHandler,
       },
       {
         id: 5,
@@ -90,6 +98,7 @@ export class Shipping extends Component {
         type: 'text',
         value: city,
         required: true,
+        changeHandler: this.changeHandler,
       },
       {
         id: 6,
@@ -98,6 +107,7 @@ export class Shipping extends Component {
         type: 'text',
         value: state,
         required: true,
+        changeHandler: this.changeHandler,
       },
     ];
 
@@ -109,6 +119,7 @@ export class Shipping extends Component {
         type: 'number',
         value: cellPhone,
         required: true,
+        changeHandler: this.changeHandler,
       },
       {
         id: 8,
@@ -117,12 +128,16 @@ export class Shipping extends Component {
         type: 'number',
         value: telephone,
         required: true,
+        changeHandler: this.changeHandler,
       },
     ];
 
     return (
       <div className={`${styles['shipping-container']}`}>
         <p className={`${styles['shipping-header']}`}>Shipping Information</p>
+        <BasicInputs basicShippingTemplate={basicShippingTemplate} />
+        <ShippingInputs shippingDetailsTemplate={shippingDetailsTemplate} />
+        <PhoneInputs phoneNumberTemplate={phoneNumberTemplate} />
       </div>
     );
   }

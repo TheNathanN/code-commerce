@@ -1,0 +1,4 @@
+.row-two-container {
+  display: flex;
+  justify-content: space-between;
+}
