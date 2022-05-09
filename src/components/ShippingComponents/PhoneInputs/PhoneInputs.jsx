@@ -20,7 +20,6 @@ export class PhoneInputs extends Component {
             changeHandler={input.changeHandler}
             required={input.required}
             error={input.error}
-            loggedIn={true}
           />
         ))}
       </div>

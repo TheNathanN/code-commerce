@@ -23,7 +23,6 @@ export class ShippingInputs extends Component {
           changeHandler={shippingDetailsTemplate[0].changeHandler}
           required={shippingDetailsTemplate[0].required}
           error={shippingDetailsTemplate[0].error}
-          loggedIn={true}
         />
 
         <ShippingRowTwo rowTwoInputs={rowTwoInputs} />

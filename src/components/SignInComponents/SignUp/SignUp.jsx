@@ -9,7 +9,7 @@ import {
   emailErrorChecker,
   passwordErrorChecker,
   confirmPasswordErrorChecker,
-  nameErrorChecker,
+  textErrorChecker,
   emailUsedChecker,
 } from '../../../helpers/errorHandlers';
 
@@ -67,7 +67,7 @@ export class SignUp extends Component {
         placeholder: 'First Name *',
         value: firstName,
         required: true,
-        error: nameErrorChecker(firstName),
+        error: textErrorChecker(firstName),
       },
       lastName: {
         id: 5,
@@ -76,7 +76,7 @@ export class SignUp extends Component {
         placeholder: 'Last Name *',
         value: lastName,
         required: true,
-        error: nameErrorChecker(lastName),
+        error: textErrorChecker(lastName),
       },
       postCode: {
         id: 6,

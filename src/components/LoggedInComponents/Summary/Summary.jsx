@@ -6,14 +6,40 @@ import styles from './Summary.module.css';
 
 export class Summary extends Component {
   render() {
+    const { currentState, verifyDiscount, changeView } = this.props;
+
     const {
       itemsInCart,
       view,
       discount,
       shipping,
-      verifyDiscount,
-      changeView,
-    } = this.props;
+      addressTitle,
+      name,
+      address,
+      zipCode,
+      country,
+      city,
+      state,
+      cellPhone,
+      telephone,
+    } = currentState;
+
+    const shippingEntered = () => {
+      if (
+        name &&
+        address &&
+        zipCode &&
+        country &&
+        city &&
+        state &&
+        cellPhone &&
+        telephone
+      ) {
+        return false;
+      } else {
+        return true;
+      }
+    };
 
     return (
       <div className={`${styles['summary-container']}`}>
@@ -35,6 +61,7 @@ export class Summary extends Component {
           <button
             className={`${styles['summary-btn']}`}
             onClick={() => changeView('next', view)}
+            disabled={view === 'ship' ? shippingEntered() : false}
           >
             {view === 'cart'
               ? 'Shipping'

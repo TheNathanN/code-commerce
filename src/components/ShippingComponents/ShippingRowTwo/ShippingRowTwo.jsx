@@ -14,6 +14,7 @@ export class ShippingRowTwo extends Component {
           if (input.type === 'select') {
             return (
               <SelectField
+                key={input.id}
                 name={input.name}
                 placeholder={input.placeholder}
                 value={input.value}

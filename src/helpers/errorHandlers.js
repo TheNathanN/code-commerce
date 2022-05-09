@@ -43,4 +43,4 @@ export const passwordErrorChecker = input => {
 export const confirmPasswordErrorChecker = (password, passwordToConfirm) =>
   passwordToConfirm !== '' && passwordToConfirm !== password;
 
-export const nameErrorChecker = input => /\d/.test(input);
+export const textErrorChecker = input => /\d/.test(input);

@@ -27,14 +27,13 @@ class InputField extends Component {
       error,
       instructions,
       taken,
-      loggedIn,
     } = this.props;
 
     const { hidden } = this.state;
     const formattedPlaceholder = placeholder.replace('*', '');
 
     return (
-      <div className={!loggedIn ? styles['input-container'] : ''}>
+      <div className={styles['input-container']}>
         <label htmlFor={name}>{placeholder}</label>
         <input
           id={name}

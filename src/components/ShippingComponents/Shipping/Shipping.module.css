@@ -1,0 +1,12 @@
+.shipping-container {
+  background-color: var(--white);
+  padding: 1.5em;
+}
+
+.shipping-header {
+  font-weight: bold;
+  border-bottom: 3px solid var(--bg-gray);
+  padding-bottom: 1em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}

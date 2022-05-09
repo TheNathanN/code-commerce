@@ -17,8 +17,13 @@ export class SelectField extends Component {
           required={required}
           onChange={e => changeHandler(name, e)}
         >
-          {options.map(option => (
-            <option value={option}>{option}</option>
+          <option value='select' hidden>
+            Select
+          </option>
+          {options.map((option, i) => (
+            <option key={i} value={option}>
+              {option}
+            </option>
           ))}
         </select>
       </div>

@@ -10,8 +10,15 @@ export class LoggedIn extends Component {
   constructor() {
     super();
     this.state = {
-      view: 'cart', // 'cart' || 'ship' || 'pay' || 'confirm'
-      shipping: 0,
+      // --------------------------------------
+      // View controls what's showing on screen
+      // 'cart' || 'ship' || 'pay' || 'confirm'
+      view: 'cart',
+      // --------------------------------------
+
+      // --------------------
+      // Shopping Cart State
+      // --------------------
       discount: 0,
       discountCodes: [{ discountCode: 15 }, { anotherCode: 25 }],
       itemsInCart: {
@@ -46,6 +53,20 @@ export class LoggedIn extends Component {
           quantity: 2,
         },
       },
+
+      // -------------------
+      // Shipping Form State
+      // -------------------
+      shipping: 0,
+      addressTitle: '',
+      name: '',
+      address: '',
+      zipCode: '',
+      country: '',
+      city: '',
+      state: '',
+      cellPhone: '',
+      telephone: '',
     };
   }
 
@@ -112,8 +133,14 @@ export class LoggedIn extends Component {
     });
   };
 
+  inputChangeHandler = (state, event) => {
+    this.setState({
+      [state]: event.target.value,
+    });
+  };
+
   render() {
-    const { itemsInCart, view, shipping, discount } = this.state;
+    const { itemsInCart, view } = this.state;
 
     return (
       <div className={`${styles['loggedIn-container']}`}>
@@ -128,14 +155,16 @@ export class LoggedIn extends Component {
             />
           )}
 
-          {view === 'ship' && <Shipping view={view} />}
+          {view === 'ship' && (
+            <Shipping
+              currentState={this.state}
+              inputChangeHandler={this.inputChangeHandler}
+            />
+          )}
         </div>
 
         <Summary
-          itemsInCart={itemsInCart}
-          view={view}
-          shipping={shipping}
-          discount={discount}
+          currentState={this.state}
           verifyDiscount={this.verifyDiscount}
           changeView={this.changeView}
         />
