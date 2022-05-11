@@ -12,8 +12,8 @@ export class LoggedIn extends Component {
     this.state = {
       // --------------------------------------
       // View controls what's showing on screen
-      // 'cart' || 'ship' || 'pay' || 'confirm'
       view: 'cart',
+      // 'cart' || 'ship' || 'pay' || 'confirm'
       // --------------------------------------
 
       // --------------------
@@ -57,6 +57,7 @@ export class LoggedIn extends Component {
       // -------------------
       // Shipping Form State
       // -------------------
+      shippingMode: 'standard', // 'standard' || 'express'
       shipping: 0,
       addressTitle: '',
       name: '',
@@ -69,6 +70,20 @@ export class LoggedIn extends Component {
       telephone: '',
     };
   }
+
+  toggleShippingMode = shippingMode => {
+    if (shippingMode === 'standard') {
+      this.setState({
+        shippingMode: 'express',
+        shipping: 5,
+      });
+    } else {
+      this.setState({
+        shippingMode: 'standard',
+        shipping: 0,
+      });
+    }
+  };
 
   changeQuantity = (itemId, event) => {
     this.setState({
@@ -101,7 +116,7 @@ export class LoggedIn extends Component {
       this.setState({
         view: views[currentIndex + 1],
       });
-    } else if (direction === 'prev' && currentIndex >= 0) {
+    } else if (direction === 'back' && currentIndex >= 0) {
       this.setState({
         view: views[currentIndex - 1],
       });
@@ -139,6 +154,12 @@ export class LoggedIn extends Component {
     });
   };
 
+  toggleState = stateToChange => {
+    this.setState({
+      [stateToChange]: !this.state[stateToChange],
+    });
+  };
+
   render() {
     const { itemsInCart, view } = this.state;
 
@@ -159,6 +180,10 @@ export class LoggedIn extends Component {
             <Shipping
               currentState={this.state}
               inputChangeHandler={this.inputChangeHandler}
+              toggleState={this.toggleState}
+              toggleShippingMode={this.toggleShippingMode}
+              changeView={this.changeView}
+              view={view}
             />
           )}
         </div>

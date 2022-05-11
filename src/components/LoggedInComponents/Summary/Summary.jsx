@@ -26,6 +26,7 @@ export class Summary extends Component {
 
     const shippingEntered = () => {
       if (
+        addressTitle &&
         name &&
         address &&
         zipCode &&

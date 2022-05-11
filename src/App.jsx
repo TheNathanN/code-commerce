@@ -15,6 +15,7 @@ class App extends Component {
       lastName: '',
       email: '',
       postCode: '',
+      signInMode: 'signIn', // 'signIn' || 'createAccount'
       signedIn: false,
       createAccount: false,
       accounts: [
@@ -87,6 +88,7 @@ class App extends Component {
       signedIn,
       createAccount,
       accounts,
+      signInMode,
     } = this.state;
 
     return (
@@ -97,6 +99,7 @@ class App extends Component {
               email={email}
               password={password}
               createAccount={createAccount}
+              signInMode={signInMode}
               inputChangeHandler={this.inputChangeHandler}
               toggleState={this.toggleState}
               loginUser={this.loginUser}
@@ -105,6 +108,7 @@ class App extends Component {
         ) : !signedIn ? (
           <div className={`${styles['signin-container']}`}>
             <SignUp
+              signInMode={signInMode}
               password={password}
               firstName={firstName}
               lastName={lastName}

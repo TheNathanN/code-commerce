@@ -24,3 +24,8 @@
 .selected {
   background-color: var(--red);
 }
+
+.select-label {
+  width: 7em;
+  margin-left: 1em;
+}

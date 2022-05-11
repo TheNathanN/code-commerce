@@ -13,14 +13,18 @@ export class LoginHeader extends Component {
           <SelectBtn
             toggleState={toggleState}
             createAccount={createAccount}
-            buttonType={'signIn'}
+            buttonType='signIn'
+            label='SIGN IN'
+            toggle='createAccount'
           />
         </div>
 
         <SelectBtn
           toggleState={toggleState}
           createAccount={createAccount}
-          buttonType={'create'}
+          buttonType='create'
+          label='CREATE ACCOUNT'
+          toggle='createAccount'
         />
       </div>
     );

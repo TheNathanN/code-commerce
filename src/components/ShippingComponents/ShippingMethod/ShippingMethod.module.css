@@ -1,0 +1,33 @@
+.shipping-method-container {
+  border-top: 3px solid var(--bg-gray);
+  margin: 1em 0;
+  padding: 1em 0;
+}
+
+.shipping-method-header {
+  font-weight: bold;
+  font-size: var(--font-md);
+}
+
+.shipping-select-container {
+  display: flex;
+  align-items: center;
+  margin: 1.5em 0;
+}
+
+.shipping-select-container a {
+  margin-left: 1.5em;
+}
+
+.method-btn {
+  color: var(--black);
+  border: 3px solid var(--black);
+  background-color: transparent;
+  margin-top: 1.5em;
+  font-size: 1em;
+}
+
+.method-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+}

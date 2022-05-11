@@ -27,6 +27,7 @@ export class SignUp extends Component {
       inputChangeHandler,
       toggleState,
       createNewAccount,
+      signInMode,
     } = this.props;
 
     const signUpTemplate = {
@@ -107,7 +108,12 @@ export class SignUp extends Component {
 
     return (
       <div className={`card ${styles['signup-container']}`}>
-        <LoginHeader toggleState={toggleState} createAccount={createAccount} />
+        <LoginHeader
+          signInMode={signInMode}
+          inputChangeHandler={inputChangeHandler}
+          toggleState={toggleState}
+          createAccount={createAccount}
+        />
 
         {Object.keys(signUpTemplate).map(info => {
           const {

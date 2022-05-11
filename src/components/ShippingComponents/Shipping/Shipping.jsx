@@ -6,13 +6,21 @@ import { countryOptions } from '../../../helpers/inputOptions';
 import BasicInputs from '../BasicInputs/BasicInputs';
 import ShippingInputs from '../ShippingInputs/ShippingInputs';
 import PhoneInputs from '../PhoneInputs/PhoneInputs';
+import ShippingMethod from '../ShippingMethod/ShippingMethod';
 
 export class Shipping extends Component {
   render() {
-    const { currentState, inputChangeHandler } = this.props;
+    const {
+      currentState,
+      inputChangeHandler,
+      toggleState,
+      toggleShippingMode,
+      changeView,
+      view,
+    } = this.props;
 
     const {
-      shipping,
+      shippingMode,
       addressTitle,
       name,
       address,
@@ -29,7 +37,7 @@ export class Shipping extends Component {
         id: 0,
         name: 'addressTitle',
         placeholder:
-          'Address Title (ex: apartment name, business name, etc...)',
+          'Address Title * (ex. apartment name, business name, etc...)',
         type: 'text',
         value: addressTitle,
         required: true,
@@ -122,6 +130,15 @@ export class Shipping extends Component {
         <BasicInputs basicShippingTemplate={basicShippingTemplate} />
         <ShippingInputs shippingDetailsTemplate={shippingDetailsTemplate} />
         <PhoneInputs phoneNumberTemplate={phoneNumberTemplate} />
+
+        <ShippingMethod
+          shippingMode={shippingMode}
+          toggleState={toggleState}
+          inputChangeHandler={inputChangeHandler}
+          toggleShippingMode={toggleShippingMode}
+          changeView={changeView}
+          view={view}
+        />
       </div>
     );
   }
