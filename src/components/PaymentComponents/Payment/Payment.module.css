@@ -1,0 +1,11 @@
+.payment-container {
+  background-color: var(--white);
+  padding: 1em;
+}
+
+.payment-header {
+  font-weight: bold;
+  font-size: var(--font-md);
+  border-bottom: 3px solid var(--bg-gray);
+  padding-bottom: 0.5em;
+}

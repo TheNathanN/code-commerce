@@ -37,7 +37,7 @@ export class Shipping extends Component {
         id: 0,
         name: 'addressTitle',
         placeholder:
-          'Address Title * (ex. apartment name, business name, etc...)',
+          'Title * (ex. home, apartment name, business name, etc...)',
         type: 'text',
         value: addressTitle,
         required: true,

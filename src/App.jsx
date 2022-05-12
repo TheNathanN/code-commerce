@@ -124,7 +124,7 @@ class App extends Component {
           </div>
         ) : (
           <>
-            <LoggedIn />
+            <LoggedIn email={email} />
           </>
         )}
       </>

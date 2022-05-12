@@ -13,9 +13,9 @@ export class CartSummary extends Component {
       <div className={`${styles['cart-summary-container']}`}>
         <p className={`${styles['cart-summary-header']}`}>
           <span>
-            {count} item{pluralChecker(count)}{' '}
+            {count} item{pluralChecker(count)}
           </span>{' '}
-          in your bag.
+          in your bag
         </p>
 
         <div className={`${styles['product-card-container']}`}>

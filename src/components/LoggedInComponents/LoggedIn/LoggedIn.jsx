@@ -5,6 +5,7 @@ import Cart from '../../CartComponents/Cart/Cart';
 import Summary from '../Summary/Summary';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Shipping from '../../ShippingComponents/Shipping/Shipping';
+import Payment from '../../PaymentComponents/Payment/Payment';
 
 export class LoggedIn extends Component {
   constructor() {
@@ -163,6 +164,8 @@ export class LoggedIn extends Component {
   render() {
     const { itemsInCart, view } = this.state;
 
+    const { email } = this.props;
+
     return (
       <div className={`${styles['loggedIn-container']}`}>
         <div className={`${styles['main-container']}`}>
@@ -186,9 +189,12 @@ export class LoggedIn extends Component {
               view={view}
             />
           )}
+
+          {view === 'pay' && <Payment />}
         </div>
 
         <Summary
+          email={email}
           currentState={this.state}
           verifyDiscount={this.verifyDiscount}
           changeView={this.changeView}

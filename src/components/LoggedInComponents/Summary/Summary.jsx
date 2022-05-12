@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import CartSummary from '../CartSummary/CartSummary';
 import Promo from '../Promo/Promo';
+import ShipmentAddress from '../ShipmentAddress/ShipmentAddress';
 import Total from '../Total/Total';
 import styles from './Summary.module.css';
 
 export class Summary extends Component {
   render() {
-    const { currentState, verifyDiscount, changeView } = this.props;
+    const { currentState, verifyDiscount, changeView, email } = this.props;
 
     const {
       itemsInCart,
@@ -57,6 +58,10 @@ export class Summary extends Component {
           discount={discount}
           shipping={shipping}
         />
+
+        {view === 'pay' && (
+          <ShipmentAddress currentState={currentState} email={email} />
+        )}
 
         {view !== 'confirm' && (
           <button

@@ -1,0 +1,27 @@
+.address-container {
+  border-bottom: 3px solid var(--bg-gray);
+  padding-bottom: 1.5em;
+}
+
+.address-header,
+.shipping-method-header {
+  font-weight: bold;
+}
+
+.address-header {
+  margin: 1em 0;
+  font-size: var(--font-md);
+}
+
+.shipping-method-container {
+  margin-bottom: 1em;
+}
+
+.shipping-method-header {
+  font-size: var(--font-reg);
+  margin-bottom: 0.5em;
+}
+
+.address-data {
+  margin: 0.2em 0;
+}
