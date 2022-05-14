@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { getTotal } from '../../../helpers/helperFunctions';
 import CartSummary from '../CartSummary/CartSummary';
 import Promo from '../Promo/Promo';
 import ShipmentAddress from '../ShipmentAddress/ShipmentAddress';
@@ -73,7 +74,7 @@ export class Summary extends Component {
               ? 'Shipping'
               : view === 'ship'
               ? 'Payment'
-              : 'Checkout'}
+              : `Pay $${getTotal(itemsInCart, discount, shipping).toFixed(2)}`}
           </button>
         )}
       </div>

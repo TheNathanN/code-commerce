@@ -1,9 +1,9 @@
-.loggedIn-container {
-  width: 100%;
-  padding: 1em;
-  display: flex;
-}
-
+.loggedIn-container,
 .main-container {
   width: 100%;
+}
+
+.loggedIn-container {
+  padding: 1em;
+  display: flex;
 }

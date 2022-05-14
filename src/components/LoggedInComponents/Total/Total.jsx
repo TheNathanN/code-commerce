@@ -1,31 +1,17 @@
 import React, { Component } from 'react';
 import styles from './Total.module.css';
 
-import { formatMoney } from '../../../helpers/helperFunctions';
+import { formatMoney, getTotal } from '../../../helpers/helperFunctions';
 
 export class Total extends Component {
   render() {
     const { itemsInCart, discount, shipping } = this.props;
-    const itemKeys = Object.keys(itemsInCart);
-
-    const getTotal = () => {
-      const prices = [];
-
-      itemKeys.forEach(key => {
-        const total = itemsInCart[key].price * itemsInCart[key].quantity;
-        prices.push(total);
-      });
-
-      return prices.reduce((acc, num) => {
-        return acc + num;
-      }, 0);
-    };
 
     const totalTemplate = [
       {
         id: 1,
         label: 'Cart Subtotal',
-        value: getTotal(),
+        value: getTotal(itemsInCart),
       },
       {
         id: 2,
@@ -41,7 +27,7 @@ export class Total extends Component {
       {
         id: 4,
         label: 'Cart Total',
-        value: getTotal() + shipping - discount,
+        value: getTotal(itemsInCart, discount, shipping),
         style: { color: 'var(--red)' },
       },
     ];

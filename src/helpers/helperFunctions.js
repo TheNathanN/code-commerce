@@ -9,3 +9,24 @@ export const getCount = obj => {
 };
 
 export const pluralChecker = num => (num !== 1 ? 's' : '');
+
+export const getTotal = (itemsInCart, discount, shipping) => {
+  const prices = [];
+
+  const itemKeys = Object.keys(itemsInCart);
+
+  itemKeys.forEach(key => {
+    const total = itemsInCart[key].price * itemsInCart[key].quantity;
+    prices.push(total);
+  });
+
+  const cartTotal = prices.reduce((acc, num) => {
+    return acc + num;
+  }, 0);
+
+  if (discount || shipping) {
+    return cartTotal + shipping - discount;
+  } else {
+    return cartTotal;
+  }
+};

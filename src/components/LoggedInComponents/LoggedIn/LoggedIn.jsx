@@ -11,11 +11,9 @@ export class LoggedIn extends Component {
   constructor() {
     super();
     this.state = {
-      // --------------------------------------
-      // View controls what's showing on screen
-      view: 'cart',
+      // view controls what's showing on screen
       // 'cart' || 'ship' || 'pay' || 'confirm'
-      // --------------------------------------
+      view: 'cart',
 
       // --------------------
       // Shopping Cart State
@@ -69,6 +67,15 @@ export class LoggedIn extends Component {
       state: '',
       cellPhone: '',
       telephone: '',
+
+      // -------------------
+      // Payment Form State
+      // -------------------
+      cardholderName: '',
+      cardNum: 0,
+      expMonth: 0,
+      expYear: 0,
+      cvv: 0,
     };
   }
 
@@ -186,11 +193,16 @@ export class LoggedIn extends Component {
               toggleState={this.toggleState}
               toggleShippingMode={this.toggleShippingMode}
               changeView={this.changeView}
-              view={view}
             />
           )}
 
-          {view === 'pay' && <Payment />}
+          {view === 'pay' && (
+            <Payment
+              currentState={this.state}
+              changeView={this.changeView}
+              inputChangeHandler={this.inputChangeHandler}
+            />
+          )}
         </div>
 
         <Summary

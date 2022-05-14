@@ -9,3 +9,47 @@
   border-bottom: 3px solid var(--bg-gray);
   padding-bottom: 0.5em;
 }
+
+.payment-container form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.payment-container input {
+  width: 100%;
+}
+
+.payment-container select {
+  width: 12em;
+  border: 0;
+  padding: 1.2em 0.5em;
+  background-color: var(--bg-gray);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-container button {
+  margin: 2em 0 1em;
+}
+
+.back-btn {
+  border: 3px solid var(--black);
+  color: var(--black);
+  background-color: transparent;
+}
+
+.back-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+}
+
+.checkout-btn {
+  background-color: var(--red);
+}
+
+.checkout-btn:hover {
+  background-color: var(--dark-red);
+}

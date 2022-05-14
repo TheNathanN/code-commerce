@@ -1,27 +1,26 @@
 import React, { Component } from 'react';
-
 import styles from './Payment.module.css';
 
+import { getTotal } from '../../../helpers/helperFunctions';
+
+import SelectField from '../../UI/SelectField';
+import InputField from '../../UI/InputField';
+
 export class Payment extends Component {
-  constructor() {
-    super();
-    this.state = {
-      cardholderName: '',
-      cardNumber: '',
-      month: '',
-      year: '',
-      cvv: '',
-    };
-  }
-
-  inputHandler = (state, event) => {
-    this.setState({
-      [state]: event.target.value,
-    });
-  };
-
   render() {
-    const { cardholderName, cardNumber, month, year, cvv } = this.state;
+    const { currentState, changeView, inputChangeHandler } = this.props;
+
+    const {
+      shipping,
+      discount,
+      view,
+      itemsInCart,
+      cardholderName,
+      cardNumber,
+      month,
+      year,
+      cvv,
+    } = currentState;
 
     const paymentTemplate = [
       {
@@ -31,7 +30,7 @@ export class Payment extends Component {
         placeholder: 'Cardholder Name',
         value: cardholderName,
         required: true,
-        changeHandler: this.inputHandler,
+        changeHandler: inputChangeHandler,
       },
       {
         id: 2,
@@ -40,7 +39,6 @@ export class Payment extends Component {
         placeholder: 'Card Number',
         value: cardNumber,
         required: true,
-        changeHandler: this.inputHandler,
       },
       {
         id: 3,
@@ -49,7 +47,6 @@ export class Payment extends Component {
         placeholder: 'Month',
         value: month,
         required: true,
-        changeHandler: this.inputHandler,
         options: [
           '01',
           '02',
@@ -72,7 +69,6 @@ export class Payment extends Component {
         placeholder: 'Year',
         value: year,
         required: true,
-        changeHandler: this.inputHandler,
         options: [
           '2012',
           '2011',
@@ -196,13 +192,69 @@ export class Payment extends Component {
         placeholder: 'CVV',
         value: cvv,
         required: true,
-        changeHandler: this.inputHandler,
       },
     ];
 
     return (
       <div className={`${styles['payment-container']}`}>
         <p className={`${styles['payment-header']}`}>PAYMENT INFORMATION</p>
+        <form action=''>
+          {paymentTemplate.map(input => {
+            const {
+              id,
+              name,
+              placeholder,
+              value,
+              changeHandler,
+              required,
+              options,
+              type,
+              error,
+            } = input;
+
+            if (type === 'select') {
+              return (
+                <SelectField
+                  key={id}
+                  name={name}
+                  placeholder={placeholder}
+                  value={value}
+                  changeHandler={changeHandler}
+                  required={required}
+                  options={options}
+                />
+              );
+            } else {
+              return (
+                <InputField
+                  key={id}
+                  type={type}
+                  value={value}
+                  changeHandler={inputChangeHandler}
+                  name={name}
+                  placeholder={placeholder}
+                  required={required}
+                  error={error}
+                />
+              );
+            }
+          })}
+        </form>
+
+        <div className={`${styles['btn-container']}`}>
+          <button
+            className={`${styles['back-btn']}`}
+            onClick={() => changeView('back', view)}
+          >
+            BACK TO ADDRESS
+          </button>
+          <button
+            className={`${styles['checkout-btn']}`}
+            onClick={() => changeView('next', view)}
+          >
+            PAY ${getTotal(itemsInCart, discount, shipping).toFixed(2)}
+          </button>
+        </div>
       </div>
     );
   }

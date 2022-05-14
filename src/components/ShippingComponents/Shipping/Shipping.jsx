@@ -16,7 +16,6 @@ export class Shipping extends Component {
       toggleState,
       toggleShippingMode,
       changeView,
-      view,
     } = this.props;
 
     const {
@@ -30,6 +29,7 @@ export class Shipping extends Component {
       state,
       cellPhone,
       telephone,
+      view,
     } = currentState;
 
     const basicShippingTemplate = [

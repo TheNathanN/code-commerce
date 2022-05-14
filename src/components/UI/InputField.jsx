@@ -38,7 +38,7 @@ class InputField extends Component {
         <input
           id={name}
           type={hidden ? type : 'text'}
-          value={value}
+          value={value === 0 ? '' : value}
           onChange={e => changeHandler(name, e)}
           name={name}
           required={required}
@@ -49,6 +49,13 @@ class InputField extends Component {
               ${styles['input-error']}
               `
               : styles['basic-input']
+          }
+          style={
+            name === 'cvv'
+              ? {
+                  width: '10em',
+                }
+              : {}
           }
         />
 
