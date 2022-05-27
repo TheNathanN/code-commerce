@@ -27,6 +27,7 @@ class InputField extends Component {
       error,
       instructions,
       taken,
+      cardType,
     } = this.props;
 
     const { hidden } = this.state;
@@ -79,6 +80,36 @@ class InputField extends Component {
 
         {instructions && (
           <p className={styles['instructions']}>{instructions}</p>
+        )}
+
+        {name === 'cardNumber' && cardType === 'VISA' && (
+          <img
+            className={`${styles['card-logo']}`}
+            src='../../assets/VISA.jpeg'
+            alt={cardType}
+          />
+        )}
+
+        {name === 'cardNumber' && cardType === 'DISCOVER' && (
+          <img
+            className={`${styles['card-logo']}`}
+            src='../../assets/DISCOVER.jpeg'
+            alt={cardType}
+          />
+        )}
+        {name === 'cardNumber' && cardType === 'MASTERCARD' && (
+          <img
+            className={`${styles['card-logo']}`}
+            src='./assets/MASTERCARD.svg'
+            alt={cardType}
+          />
+        )}
+        {name === 'cardNumber' && cardType === 'AMERICAN_EXPRESS' && (
+          <img
+            className={`${styles['card-logo']}`}
+            src='./assets/AMERICAN_EXPRESS.jpeg'
+            alt={cardType}
+          />
         )}
       </div>
     );

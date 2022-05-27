@@ -10,7 +10,9 @@ export class ShippingMethod extends Component {
 
     return (
       <div className={`${styles['shipping-method-container']}`}>
-        <p className={`${styles['shipping-method-header']}`}>Shipping Method</p>
+        <h2 className={`${styles['shipping-method-header']}`}>
+          Shipping Method
+        </h2>
 
         <div>
           <div className={`${styles['shipping-select-container']}`}>

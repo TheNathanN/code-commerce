@@ -122,7 +122,7 @@ export class Payment extends Component {
 
     return (
       <div className={`${styles['payment-container']}`}>
-        <p className={`${styles['payment-header']}`}>PAYMENT INFORMATION</p>
+        <h1 className={`${styles['payment-header']}`}>PAYMENT INFORMATION</h1>
         <form>
           {paymentTemplate.map(input => {
             const {
@@ -160,6 +160,8 @@ export class Payment extends Component {
                   placeholder={placeholder}
                   required={required}
                   error={error}
+                  cardType={cardType}
+                  view={view}
                 />
               );
             }

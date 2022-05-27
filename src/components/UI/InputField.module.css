@@ -54,3 +54,10 @@
   font-weight: bold;
   color: grey;
 }
+
+.card-logo {
+  width: 2em;
+  position: absolute;
+  right: 1em;
+  top: 3.7em;
+}

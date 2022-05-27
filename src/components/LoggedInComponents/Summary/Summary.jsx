@@ -29,6 +29,7 @@ export class Summary extends Component {
       expMonth,
       expYear,
       cvv,
+      cardType,
     } = currentState;
 
     const checkInputs = view => {
@@ -47,10 +48,10 @@ export class Summary extends Component {
           telephone) ||
         (view === 'pay' &&
           cardholderName &&
-          cardNumber !== 0 &&
-          expMonth !== 0 &&
-          expYear !== 0 &&
-          cvv !== 0)
+          cardNumber &&
+          expMonth &&
+          expYear &&
+          cvv)
       ) {
         return false;
       } else {

@@ -126,7 +126,7 @@ export class Shipping extends Component {
 
     return (
       <div className={`${styles['shipping-container']}`}>
-        <p className={`${styles['shipping-header']}`}>Shipping Information</p>
+        <h1 className={`${styles['shipping-header']}`}>Shipping Information</h1>
         <BasicInputs basicShippingTemplate={basicShippingTemplate} />
         <ShippingInputs shippingDetailsTemplate={shippingDetailsTemplate} />
         <PhoneInputs phoneNumberTemplate={phoneNumberTemplate} />

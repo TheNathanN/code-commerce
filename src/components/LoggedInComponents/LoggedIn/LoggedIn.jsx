@@ -6,6 +6,7 @@ import Summary from '../Summary/Summary';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Shipping from '../../ShippingComponents/Shipping/Shipping';
 import Payment from '../../PaymentComponents/Payment/Payment';
+import Confirm from '../../CompleteComponents/Confirm/Confirm';
 
 export class LoggedIn extends Component {
   constructor() {
@@ -167,8 +168,19 @@ export class LoggedIn extends Component {
       DISCOVER: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
     };
     for (const card in regexPattern) {
-      if (number.replace(/[^\d]/g, '').match(regexPattern[card])) return card;
+      if (number.replace(/[^\d]/g, '').match(regexPattern[card])) {
+        this.setState({
+          cardError: false,
+        });
+
+        return card;
+      }
     }
+
+    this.setState({
+      cardError: true,
+    });
+
     return '';
   };
 
@@ -197,7 +209,6 @@ export class LoggedIn extends Component {
 
   render() {
     const { itemsInCart, view } = this.state;
-
     const { email } = this.props;
 
     return (
@@ -231,6 +242,8 @@ export class LoggedIn extends Component {
               toggleState={this.toggleState}
             />
           )}
+
+          {view === 'confirm' && <Confirm />}
         </div>
 
         <Summary
