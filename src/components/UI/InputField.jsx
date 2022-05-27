@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { EyeIcon, EyeOffIcon } from '@heroicons/react/solid';
+
+import { checkCardType } from '../../helpers/helperFunctions';
+
 import styles from './InputField.module.css';
 
 class InputField extends Component {
@@ -82,32 +85,10 @@ class InputField extends Component {
           <p className={styles['instructions']}>{instructions}</p>
         )}
 
-        {name === 'cardNumber' && cardType === 'VISA' && (
+        {name === 'cardNumber' && (
           <img
             className={`${styles['card-logo']}`}
-            src='../../assets/VISA.jpeg'
-            alt={cardType}
-          />
-        )}
-
-        {name === 'cardNumber' && cardType === 'DISCOVER' && (
-          <img
-            className={`${styles['card-logo']}`}
-            src='../../assets/DISCOVER.jpeg'
-            alt={cardType}
-          />
-        )}
-        {name === 'cardNumber' && cardType === 'MASTERCARD' && (
-          <img
-            className={`${styles['card-logo']}`}
-            src='./assets/MASTERCARD.svg'
-            alt={cardType}
-          />
-        )}
-        {name === 'cardNumber' && cardType === 'AMERICAN_EXPRESS' && (
-          <img
-            className={`${styles['card-logo']}`}
-            src='./assets/AMERICAN_EXPRESS.jpeg'
+            src={checkCardType(cardType)}
             alt={cardType}
           />
         )}

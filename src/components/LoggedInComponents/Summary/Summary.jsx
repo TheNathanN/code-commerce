@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+
 import { getTotal } from '../../../helpers/helperFunctions';
+
 import CartSummary from '../CartSummary/CartSummary';
 import Promo from '../Promo/Promo';
 import ShipmentAddress from '../ShipmentAddress/ShipmentAddress';
 import Total from '../Total/Total';
+import PaymentInfo from '../PaymentInfo/PaymentInfo';
+
 import styles from './Summary.module.css';
 
 export class Summary extends Component {
@@ -74,14 +78,21 @@ export class Summary extends Component {
           shipping={shipping}
         />
 
-        {view === 'pay' && (
+        {view === 'pay' || view === 'confirm' ? (
           <ShipmentAddress currentState={currentState} email={email} />
+        ) : (
+          ''
         )}
+
+        {view === 'confirm' && <PaymentInfo currentState={currentState} />}
 
         {view !== 'confirm' && (
           <button
             className={`${styles['summary-btn']}`}
-            onClick={() => changeView('next', view)}
+            onClick={() => {
+              changeView('next', view);
+              window.scrollTo(1, 1);
+            }}
             disabled={
               view === 'ship' || view === 'pay' ? checkInputs(view) : false
             }

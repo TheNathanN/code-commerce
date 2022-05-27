@@ -243,7 +243,7 @@ export class LoggedIn extends Component {
             />
           )}
 
-          {view === 'confirm' && <Confirm />}
+          {view === 'confirm' && <Confirm currentState={this.state} />}
         </div>
 
         <Summary

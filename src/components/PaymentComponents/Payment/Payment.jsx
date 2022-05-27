@@ -171,13 +171,19 @@ export class Payment extends Component {
         <div className={`${styles['btn-container']}`}>
           <button
             className={`${styles['back-btn']}`}
-            onClick={() => changeView('back', view)}
+            onClick={() => {
+              changeView('back', view);
+              window.scrollTo(1, 1);
+            }}
           >
             BACK TO ADDRESS
           </button>
           <button
             className={`${styles['checkout-btn']}`}
-            onClick={() => changeView('next', view)}
+            onClick={() => {
+              changeView('next', view);
+              window.scrollTo(1, 1);
+            }}
             disabled={inputCheck()}
           >
             PAY ${getTotal(itemsInCart, discount, shipping).toFixed(2)}

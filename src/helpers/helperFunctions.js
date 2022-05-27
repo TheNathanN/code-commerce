@@ -30,3 +30,18 @@ export const getTotal = (itemsInCart, discount, shipping) => {
     return cartTotal;
   }
 };
+
+export const checkCardType = type => {
+  switch (type) {
+    case 'MASTERCARD':
+      return './assets/MASTERCARD.svg';
+    case 'VISA':
+      return './assets/VISA.jpeg';
+    case 'DISCOVER':
+      return './assets/DISCOVER.jpeg';
+    case 'AMERICAN_EXPRESS':
+      return './assets/AMERICAN_EXPRESS.jpeg';
+    default:
+      return '';
+  }
+};

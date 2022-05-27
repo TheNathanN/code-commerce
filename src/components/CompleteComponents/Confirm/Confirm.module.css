@@ -1,0 +1,44 @@
+.confirm-container {
+  background-color: var(--white);
+  padding: 1em;
+  height: 50%;
+}
+
+.confirm-header {
+  font-weight: bold;
+  border-bottom: 3px solid var(--bg-gray);
+  padding-bottom: 1em;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.confirm-body {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+}
+
+.confirm-body i {
+  font-size: 5em;
+  color: var(--red);
+  margin: 0.7em 0;
+}
+
+.confirm-main-text {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.back-btn {
+  border: 3px solid var(--black);
+  color: var(--black);
+  background-color: transparent;
+  margin-top: 3.5em;
+}
+
+.back-btn:hover {
+  color: var(--white);
+  background-color: var(--black);
+}

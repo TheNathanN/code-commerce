@@ -42,7 +42,10 @@ export class ShippingMethod extends Component {
 
         <button
           className={`${styles['method-btn']}`}
-          onClick={() => changeView('back', view)}
+          onClick={() => {
+            changeView('back', view);
+            window.scrollTo(1, 1);
+          }}
         >
           BACK TO CART
         </button>

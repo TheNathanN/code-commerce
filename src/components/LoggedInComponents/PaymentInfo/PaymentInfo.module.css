@@ -1,0 +1,23 @@
+.payment-container {
+  border-top: 3px solid var(--bg-gray);
+}
+
+.payment-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 1em 0;
+}
+
+.card-info {
+  display: flex;
+  font-weight: bold;
+}
+
+.card-info img {
+  width: 2em;
+  margin-right: 0.5em;
+}
+
+.card-number {
+  margin-top: 1em;
+}
