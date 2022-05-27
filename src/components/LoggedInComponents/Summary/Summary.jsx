@@ -29,7 +29,6 @@ export class Summary extends Component {
       expMonth,
       expYear,
       cvv,
-      cardType,
     } = currentState;
 
     const checkInputs = view => {
