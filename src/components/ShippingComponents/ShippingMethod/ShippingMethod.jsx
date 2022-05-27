@@ -35,8 +35,6 @@ export class ShippingMethod extends Component {
               toggle='express'
             />
             <p>Delivery in 1-3 Business Days - $5.00</p>
-            {/* eslint-disable-next-line */}
-            <a href='#'>View Shipping Details</a>
           </div>
         </div>
 

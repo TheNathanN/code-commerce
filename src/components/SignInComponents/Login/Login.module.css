@@ -1,5 +1,6 @@
 .login-container {
   display: flex;
+  max-width: 90vw;
 }
 
 .login-container button {

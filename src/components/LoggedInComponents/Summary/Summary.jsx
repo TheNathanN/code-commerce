@@ -64,7 +64,7 @@ export class Summary extends Component {
 
     return (
       <div className={`${styles['summary-container']}`}>
-        <p className={`${styles['summary-header']}`}>Summary</p>
+        <div className={`${styles['summary-header']}`}>Summary</div>
 
         {view === 'cart' && <Promo verifyDiscount={verifyDiscount} />}
 

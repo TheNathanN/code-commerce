@@ -11,7 +11,7 @@
 
 .product-info-container {
   margin: 2em 0;
-  padding: 0 4em 2em;
+  padding: 0 0 2em 4em;
   position: relative;
   border-bottom: 3px solid var(--bg-gray);
 }
@@ -34,7 +34,7 @@
 }
 
 .product-img {
-  width: 10em;
+  width: 40%;
   margin-right: 1.5em;
 }
 

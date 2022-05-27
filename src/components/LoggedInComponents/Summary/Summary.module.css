@@ -23,3 +23,11 @@
 .summary-btn:hover {
   background-color: var(--dark-red);
 }
+
+@media (max-width: 900px) {
+  .summary-container {
+    margin-left: 0;
+    margin-top: 1em;
+    width: 100%;
+  }
+}

@@ -7,3 +7,9 @@
   padding: 1em;
   display: flex;
 }
+
+@media (max-width: 900px) {
+  .loggedIn-container {
+    display: block;
+  }
+}

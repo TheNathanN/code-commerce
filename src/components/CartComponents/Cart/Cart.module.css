@@ -20,6 +20,6 @@
   display: flex;
   font-weight: bold;
   margin-bottom: 1em;
-  padding: 0.5em 4em 1em;
+  padding: 0.5em 0 1em 4em;
   font-size: var(--font-md);
 }

@@ -7,7 +7,6 @@ import styles from './PaymentInfo.module.css';
 export class PaymentInfo extends Component {
   render() {
     const { currentState } = this.props;
-
     const { cardType, cardNumber } = currentState;
 
     const hideCardNumber = card => {
