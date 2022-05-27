@@ -72,10 +72,12 @@ export class LoggedIn extends Component {
       // Payment Form State
       // -------------------
       cardholderName: '',
-      cardNum: 0,
-      expMonth: 0,
-      expYear: 0,
-      cvv: 0,
+      cardNumber: '',
+      cardType: '',
+      expMonth: '',
+      expYear: '',
+      cvv: '',
+      cardError: false,
     };
   }
 
@@ -156,10 +158,35 @@ export class LoggedIn extends Component {
     });
   };
 
+  findDebitCardType = number => {
+    const regexPattern = {
+      MASTERCARD:
+        /^(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}$/,
+      VISA: /^4[0-9]{12}(?:[0-9]{3})?$/,
+      AMERICAN_EXPRESS: /^3[47][0-9]{13}$/,
+      DISCOVER: /^6(?:011|5[0-9]{2})[0-9]{12}$/,
+    };
+    for (const card in regexPattern) {
+      if (number.replace(/[^\d]/g, '').match(regexPattern[card])) return card;
+    }
+    return '';
+  };
+
   inputChangeHandler = (state, event) => {
-    this.setState({
-      [state]: event.target.value,
-    });
+    if (event.target.name === 'cardNumber') {
+      let cardNumber = event.target.value.split(' ').join('');
+      if (cardNumber.length) {
+        cardNumber = cardNumber.match(/.{1,4}/g).join(' ');
+      }
+      this.setState({
+        [state]: cardNumber,
+        cardType: this.findDebitCardType(cardNumber),
+      });
+    } else {
+      this.setState({
+        [state]: event.target.value,
+      });
+    }
   };
 
   toggleState = stateToChange => {
@@ -201,6 +228,7 @@ export class LoggedIn extends Component {
               currentState={this.state}
               changeView={this.changeView}
               inputChangeHandler={this.inputChangeHandler}
+              toggleState={this.toggleState}
             />
           )}
         </div>

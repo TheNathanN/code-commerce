@@ -24,19 +24,33 @@ export class Summary extends Component {
       state,
       cellPhone,
       telephone,
+      cardholderName,
+      cardNumber,
+      expMonth,
+      expYear,
+      cvv,
     } = currentState;
 
-    const shippingEntered = () => {
+    const checkInputs = view => {
+      if (view === 'ship') {
+      }
       if (
-        addressTitle &&
-        name &&
-        address &&
-        zipCode &&
-        country &&
-        city &&
-        state &&
-        cellPhone &&
-        telephone
+        (view === 'ship' &&
+          addressTitle &&
+          name &&
+          address &&
+          zipCode &&
+          country &&
+          city &&
+          state &&
+          cellPhone &&
+          telephone) ||
+        (view === 'pay' &&
+          cardholderName &&
+          cardNumber !== 0 &&
+          expMonth !== 0 &&
+          expYear !== 0 &&
+          cvv !== 0)
       ) {
         return false;
       } else {
@@ -68,7 +82,9 @@ export class Summary extends Component {
           <button
             className={`${styles['summary-btn']}`}
             onClick={() => changeView('next', view)}
-            disabled={view === 'ship' ? shippingEntered() : false}
+            disabled={
+              view === 'ship' || view === 'pay' ? checkInputs(view) : false
+            }
           >
             {view === 'cart'
               ? 'Shipping'

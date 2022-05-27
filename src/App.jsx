@@ -9,11 +9,11 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      password: '',
+      password: '12345Abc#',
       confirmPassword: '',
       firstName: '',
       lastName: '',
-      email: '',
+      email: 'test@test.com',
       postCode: '',
       signInMode: 'signIn', // 'signIn' || 'createAccount'
       signedIn: false,

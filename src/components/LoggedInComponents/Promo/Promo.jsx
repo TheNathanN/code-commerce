@@ -5,7 +5,7 @@ export class Promo extends Component {
   constructor() {
     super();
     this.state = {
-      codeEntered: '',
+      codeEntered: 'discountCode',
     };
   }
 
@@ -37,7 +37,7 @@ export class Promo extends Component {
             id='promo'
             name='promo'
             type='text'
-            placeholder='Code'
+            placeholder='Enter code'
             className={`${styles['promo-input']}`}
             onChange={e => this.codeInputHandler(e)}
             value={codeEntered}
