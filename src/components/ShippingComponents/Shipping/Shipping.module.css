@@ -7,6 +7,16 @@
   font-weight: bold;
   border-bottom: 3px solid var(--bg-gray);
   padding-bottom: 1em;
-  font-size: 1.2em;
+  font-size: var(--font-md);
   text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .shipping-header {
+    font-size: var(--font-rg);
+  }
+
+  .shipping-container label {
+    font-size: var(--font-sm);
+  }
 }

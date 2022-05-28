@@ -31,3 +31,19 @@
   color: var(--white);
   background-color: var(--black);
 }
+
+@media (max-width: 900px) {
+  .shipping-method-header {
+    font-size: var(--font-rg);
+  }
+
+  .shipping-method-container p {
+    font-size: var(--font-sm);
+  }
+}
+
+@media (max-width: 530px) {
+  .method-btn {
+    width: 100%;
+  }
+}
