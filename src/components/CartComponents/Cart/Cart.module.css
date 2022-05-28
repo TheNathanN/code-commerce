@@ -23,3 +23,16 @@
   padding: 0.5em 0 1em 4em;
   font-size: var(--font-md);
 }
+
+@media (max-width: 900px) {
+  .cart-header {
+    font-size: var(--font-rg);
+  }
+}
+
+@media (max-width: 530px) {
+  .cart-header {
+    font-size: var(--font-sm);
+    padding-left: 2em;
+  }
+}
