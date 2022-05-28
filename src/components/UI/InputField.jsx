@@ -71,13 +71,13 @@ class InputField extends Component {
 
         {error && (
           <p className={styles['error-msg']}>
-            {formattedPlaceholder} was entered incorrectly.
+            {formattedPlaceholder} entered incorrectly
           </p>
         )}
 
         {taken && (
           <p className={styles['error-msg']}>
-            {formattedPlaceholder} has already been used.
+            {formattedPlaceholder} has already been used
           </p>
         )}
 

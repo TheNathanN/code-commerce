@@ -62,12 +62,12 @@ export class LoggedIn extends Component {
       addressTitle: '',
       name: '',
       address: '',
-      zipCode: '',
+      zipCode: 0,
       country: '',
       city: '',
       state: '',
-      cellPhone: '',
-      telephone: '',
+      cellPhone: 0,
+      telephone: 0,
 
       // -------------------
       // Payment Form State
@@ -77,7 +77,7 @@ export class LoggedIn extends Component {
       cardType: '',
       expMonth: '',
       expYear: '',
-      cvv: '',
+      cvv: 0,
       cardError: false,
     };
   }
@@ -127,10 +127,12 @@ export class LoggedIn extends Component {
       this.setState({
         view: views[currentIndex + 1],
       });
+      window.scrollTo(1, 1);
     } else if (direction === 'back' && currentIndex >= 0) {
       this.setState({
         view: views[currentIndex - 1],
       });
+      window.scrollTo(1, 1);
     } else {
       alert('There is an error in the changeView function.');
     }

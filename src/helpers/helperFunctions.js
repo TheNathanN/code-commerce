@@ -1,5 +1,7 @@
 export const formatMoney = num => `$${num.toFixed(2)}`;
 
+export const formatPhone = num => /[0-9]{3}-[0-9]{2}-[0-9]{3}/;
+
 export const getCount = obj => {
   const keys = Object.keys(obj);
   const quantity = [];

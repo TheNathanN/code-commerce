@@ -97,7 +97,7 @@ export class Payment extends Component {
       },
       {
         id: 5,
-        type: 'text',
+        type: 'number',
         name: 'cvv',
         placeholder: 'CVV',
         value: cvv,
@@ -173,7 +173,6 @@ export class Payment extends Component {
             className={`${styles['back-btn']}`}
             onClick={() => {
               changeView('back', view);
-              window.scrollTo(1, 1);
             }}
           >
             BACK TO ADDRESS
@@ -182,7 +181,6 @@ export class Payment extends Component {
             className={`${styles['checkout-btn']}`}
             onClick={() => {
               changeView('next', view);
-              window.scrollTo(1, 1);
             }}
             disabled={inputCheck()}
           >

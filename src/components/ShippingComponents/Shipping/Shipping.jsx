@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './Shipping.module.css';
 
 import { countryOptions } from '../../../helpers/inputOptions';
+import { numberChecker } from '../../../helpers/errorHandlers';
 
 import BasicInputs from '../BasicInputs/BasicInputs';
 import ShippingInputs from '../ShippingInputs/ShippingInputs';
@@ -46,7 +47,7 @@ export class Shipping extends Component {
       {
         id: 1,
         name: 'name',
-        placeholder: 'Name - Surname *',
+        placeholder: 'Full Name *',
         type: 'text',
         value: name,
         required: true,
@@ -130,7 +131,6 @@ export class Shipping extends Component {
         <BasicInputs basicShippingTemplate={basicShippingTemplate} />
         <ShippingInputs shippingDetailsTemplate={shippingDetailsTemplate} />
         <PhoneInputs phoneNumberTemplate={phoneNumberTemplate} />
-
         <ShippingMethod
           shippingMode={shippingMode}
           toggleState={toggleState}

@@ -6,3 +6,9 @@
 .header-container div {
   margin-right: 0.5em;
 }
+
+@media (max-width: 530px) {
+  .header-container p {
+    font-size: var(--font-rg);
+  }
+}

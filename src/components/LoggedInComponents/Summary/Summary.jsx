@@ -91,7 +91,6 @@ export class Summary extends Component {
             className={`${styles['summary-btn']}`}
             onClick={() => {
               changeView('next', view);
-              window.scrollTo(1, 1);
             }}
             disabled={
               view === 'ship' || view === 'pay' ? checkInputs(view) : false
