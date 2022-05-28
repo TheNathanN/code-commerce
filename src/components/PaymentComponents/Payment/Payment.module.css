@@ -53,3 +53,25 @@
 .checkout-btn:hover {
   background-color: var(--dark-red);
 }
+
+@media (max-width: 900px) {
+  .payment-header,
+  .btn-container button {
+    font-size: var(--font-rg);
+  }
+
+  .btn-container {
+    flex-wrap: wrap;
+  }
+
+  .btn-container button {
+    width: 100%;
+    margin: 1.5em 0 0.1em;
+  }
+
+  .payment-container form div,
+  .payment-container select,
+  .payment-container input {
+    width: 100%;
+  }
+}
